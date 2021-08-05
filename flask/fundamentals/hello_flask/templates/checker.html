@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checker board</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/checker.css') }}">
+</head>
+<body>
+    <div class="container">
+
+        <h1>***Checkerboard***</h1>
+
+        <div id="grid-container-one">
+        {% for i in range(0, num): %}
+           <div class="column" style= "width:{{width}}%;">
+            {% for x in range(0, num2): %}
+                <div class="row" style= "height:{{height}}%;"></div>
+            {% endfor %}
+           </div>
+        {% endfor %}
+        </div>
+
+
+    </div>
+
+    
+</body>
+</html>

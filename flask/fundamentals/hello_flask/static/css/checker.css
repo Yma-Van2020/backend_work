@@ -1,0 +1,52 @@
+
+*{
+padding: 0;
+margin: 0;
+}
+
+
+#grid-container-one{
+position: absolute;
+background-color: rgb(137, 215, 190);
+height: 50%;
+width: 50%;
+top: 200px;
+left: 320px;
+}
+
+h1{
+background: black;
+color:  rgb(137, 215, 190);
+width: 50%;
+padding:15px;
+text-align: center;
+margin-top: 25px;
+}
+
+.container{
+display: flex;
+justify-content: center;
+}
+.column {
+float:left;
+width: 12.5%;
+height: 100%;
+}
+
+.column:nth-child(odd) {
+background-color: black;
+}
+
+.row {
+width: 100%;
+height: 12.5%;
+}
+
+.row:nth-child(even) {
+background-color:  rgb(137, 215, 190);
+}
+
+.column:nth-child(even) .row:nth-child(even) {
+background-color: black;
+}
+
