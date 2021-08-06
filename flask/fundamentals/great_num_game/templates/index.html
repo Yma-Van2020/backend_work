@@ -63,8 +63,8 @@
     <p>I am thinking of a number between 1 and 100</p>
 
    
-    <div class="{{style}}">
-      <p>{{reply}}</p>
+    <div class="{{session['style']}}">
+      <p>{{session['reply']}}</p>
     </div>
  
     <div class="guess bg-dark">
@@ -72,8 +72,8 @@
         <p class="text-warning">Take a guess!!!</p>
         <!-- <select class="form-select" aria-label="Default select example">
         <input type="text" name="guess_num" id="num" /> -->
-        <select class="form-select" aria-`label="Default select example">
-          <option selected>Browse the possible numbers</option>
+        <select name="comp_select" class="form-select" aria-`label="Default select example">
+          <option selected></option>
            
           <option name="number_dis">{{random_num1}}</option>
           <option name="number_dis">{{random_num2}}</option>
@@ -82,11 +82,9 @@
           <option name="number_dis">{{random_num5}}</option>
           <option name="number_dis">{{random_num6}}</option>
           
-          <input type="text" name="num_dis">
-
         </select>
         <button type="submit" class="btn btn-warning">Guess</button>
-        <button type="submit" class="btn btn-primary">Reset</button>
+       <a href="/clear_session"><button type="submit" class="btn btn-primary">Reset</button></a> 
       </form>
     </div>
   </body>
