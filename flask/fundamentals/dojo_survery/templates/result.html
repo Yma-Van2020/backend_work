@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>result</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <style>
+      h1 {
+        text-decoration: underline;
+        margin-bottom:50px;
+        color: rgb(228, 202, 51);
+      }
+
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+
+      .container {
+        padding: 125px;
+        width: 45%;
+        background-color: rgb(69, 68, 68);
+        color: aliceblue;
+        margin: 0 auto;
+        margin-top: 50px;
+      }
+
+      td{
+          padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Submitted Info</h1>
+      <table>
+        <thead>
+          <tr>
+            <td>Name:</td>
+            <td>{{name}}</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dojo Location:</td>
+            <td>{{loca}}</td>
+          </tr>
+          <tr>
+            <td>Favourite Language:</td>
+            <td>{{lang}}</td>
+          </tr>
+          <tr>
+            <td>Comment:</td>
+            <td>{{comment}}</td>
+          </tr>
+          <tr>
+            <td>Are you new to coding:</td>
+            <td>{{session["checks"]}}</td>
+          </tr>
+          <tr>
+            <td>Are you liking dojo:</td>
+            <td>{{session["options"]}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
