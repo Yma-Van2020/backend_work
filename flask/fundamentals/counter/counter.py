@@ -6,7 +6,7 @@ app.secret_key = 'banana'
 @app.route("/")
 def counter():
     if 'visits' in session:
-         session['visits'] = session['visits'] + 1  # reading and updating session data
+        session['visits'] = session.get('visits') + 1  # reading and updating session data
     else:
         session['visits'] = 1 # setting session data
     return render_template("counter.html", visit = session['visits'])

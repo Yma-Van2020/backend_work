@@ -25,3 +25,14 @@ body{
   font-family:fantasy;
   color:rebeccapurple;
 }
+
+form{
+    width: 200px;
+    position: relative;
+    left: 460px;
+    top:100px;
+}
+
+label{
+    text-align: center;
+}
