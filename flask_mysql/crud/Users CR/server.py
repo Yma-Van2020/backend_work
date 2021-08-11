@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-
+from mysqlconnection import connectToMySQL
 from user import User
 app = Flask(__name__)
 @app.route("/")
@@ -21,29 +21,48 @@ def create_user():
 def add_new():
     return render_template("Create.html")
 
-@app.route("/info1")
-def show_input():
-    users = User.get_all()
-    return render_template("Read(One).html", all_users = users)
+@app.route("/info/<int:user_id>")
+def show_input(user_id):
+    query = "SELECT * FROM users WHERE users.id = %(id)s;"
+    data = {
+        "id":user_id
+    }
+    results = connectToMySQL("users").query_db(query,data)
+    
+    return render_template("Read(One).html", dis_user=results[0])
 
-@app.route("/info2")
-def show_input2():
-    users = User.get_all()
-    return render_template("Read2.html", all_users = users)
 
-@app.route("/info3")
-def show_input3():
-    users = User.get_all()
-    return render_template("Read3.html", all_users = users)
+@app.route("/info/<int:user_id>/edit")
+def show_user(user_id):
+    query = "SELECT * FROM users WHERE users.id = %(id)s;"
+    data = {
+        "id":user_id
+    }
+    results = connectToMySQL("users").query_db(query,data)
+    
+    return render_template("Edit.html", ed_user=results[0])
 
-@app.route("/info4")
-def show_input4():
-    users = User.get_all()
-    return render_template("Read4.html", all_users = users)
+@app.route('/update/<int:user_id>', methods=["POST"])
+def update_user(user_id):
+    query = "UPDATE users SET first_name = %(new_fname)s, last_name = %(new_lname)s, email = %(new_email)s WHERE id = %(id)s;"
+    data = {
+        'id': user_id,
+        "new_fname" : request.form["new_fname"],
+        "new_lname" : request.form["new_lname"],
+        "new_email" : request.form["new_email"]
+        }
 
-@app.route('/edit_user')
-def edit_user():
-    return render_template("Edit.html")
-           
+    user = connectToMySQL("users").query_db(query,data)
+    return redirect('/')
+
+@app.route("/delete/<int:user_id>")
+def delete_user(user_id):
+    query = "DELETE FROM user WHERE id = %(id)s;"
+    data = {
+        "id": user_id
+    }
+    connectToMySQL('users').query_db(query,data)
+    return redirect('/')
+     
 if __name__ == "__main__":app.run(debug=True)
 

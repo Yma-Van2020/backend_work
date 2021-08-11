@@ -34,16 +34,16 @@
 </style>
 <body>
     <div class="header">
-        <h1>User {{all_users[0].id}}</h1>
+        <h1>User {{dis_user.id}}</h1>
         <a href="http://">Home</a>
     </div>
 
     <div class="container">
     
-        <p>Full Name:{{all_users[0].first_name + " " + all_users[0].last_name}}</p>
-        <p>Email:{{all_users[0].email}}</p>
-        <p>Created On:{{all_users[0].created_at}}</p>
-        <p>Last Updated On:{{all_users[0].updated_at}}</p>
+        <p>Full Name:{{dis_user.first_name + " " + dis_user.last_name}}</p>
+        <p>Email:{{dis_user.email}}</p>
+        <p>Created On:{{dis_user.created_at}}</p>
+        <p>Last Updated On:{{dis_user.updated_at}}</p>
 
     </div>
 

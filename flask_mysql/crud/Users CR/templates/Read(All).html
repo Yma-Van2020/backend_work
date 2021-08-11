@@ -33,7 +33,7 @@
             <td>{{one_user.first_name + " " + one_user.last_name}}</td>
             <td>{{one_user.email}}</td>
             <td>{{one_user.created_at}}</td>
-            <td><a href="/info{{one_user.id}}">Show </a>|<a href='/edit_user'>Edit </a>|<a href="http://">Delete </a></td>
+            <td><a href="/info/{{one_user.id}}">Show </a>|<a href='/info/{{one_user.id}}/edit'>Edit </a>|<a href="/delete/{{one_user.id}}">Delete </a></td>
           </tr>
           {% endfor %}
 
