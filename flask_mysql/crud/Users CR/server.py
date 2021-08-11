@@ -23,13 +23,8 @@ def add_new():
 
 @app.route("/info/<int:user_id>")
 def show_input(user_id):
-    query = "SELECT * FROM users WHERE users.id = %(id)s;"
-    data = {
-        "id":user_id
-    }
-    results = connectToMySQL("users").query_db(query,data)
-    
-    return render_template("Read(One).html", dis_user=results[0])
+    user = User.show_one(user_id)
+    return render_template("Read(One).html", dis_user=user)
 
 
 @app.route("/info/<int:user_id>/edit")

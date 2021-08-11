@@ -37,7 +37,7 @@ class User:
         
     @classmethod
     def update_one(cls, id):
-        query = "UPDATE users SET first_name = %(new_fname)s, last_name = %(new_lname)s, email = %(new_email)s WHERE id = %(id)s;"
+        query = "UPDATE users SET first_name = %(new_fname)s, last_name = %(new_lname)s, email = %(new_email)s, updated_at = NOW(), WHERE id = %(id)s;"
         data = {
             'id': id,
             "new_fname" : request.form["new_fname"],
