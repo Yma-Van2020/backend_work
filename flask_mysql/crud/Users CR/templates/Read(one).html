@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        border: 2px black solid;
+        width:500px;
+        height:250px;
+        display: flex;
+        flex-direction: column;
+        padding: 15px 0px 0px 15px;
+        position: relative;
+        left: 180px;
+
+    }
+
+    .header{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .links{
+        position: relative;
+        top:60px;
+        left:180px;
+    }
+   
+</style>
+<body>
+    <div class="header">
+        <h1>User {{all_users[0].id}}</h1>
+        <a href="http://">Home</a>
+    </div>
+
+    <div class="container">
+    
+        <p>Full Name:{{all_users[0].first_name + " " + all_users[0].last_name}}</p>
+        <p>Email:{{all_users[0].email}}</p>
+        <p>Created On:{{all_users[0].created_at}}</p>
+        <p>Last Updated On:{{all_users[0].updated_at}}</p>
+
+    </div>
+
+    <div class="links">
+        <a href="http://">Edit</a> |
+        <a href="http://">Delete</a>
+    </div>
+</body>
+</html>
