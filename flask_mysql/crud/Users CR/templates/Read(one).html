@@ -35,7 +35,7 @@
 <body>
     <div class="header">
         <h1>User {{dis_user.id}}</h1>
-        <a href="http://">Home</a>
+        <a href="/">Home</a>
     </div>
 
     <div class="container">
@@ -48,8 +48,8 @@
     </div>
 
     <div class="links">
-        <a href="http://">Edit</a> |
-        <a href="http://">Delete</a>
+        <a href='/info/{{dis_user.id}}/edit'>Edit</a> |
+        <a href="/delete/{{dis_user.id}}">Delete</a>
     </div>
 </body>
 </html>
