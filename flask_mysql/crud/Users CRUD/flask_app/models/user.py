@@ -1,5 +1,5 @@
 # import the function that will return an instance of a connection
-from mysqlconnection import connectToMySQL
+from flask_app.config.mysqlconnection import connectToMySQL
 from flask import Flask, render_template, request, redirect
 # model the class after the friend table from our database
 class User:
@@ -37,7 +37,7 @@ class User:
         
     @classmethod
     def update_one(cls, id):
-        query = "UPDATE users SET first_name = %(new_fname)s, last_name = %(new_lname)s, email = %(new_email)s, updated_at = NOW(), WHERE id = %(id)s;"
+        query = "UPDATE users SET first_name = %(new_fname)s, last_name = %(new_lname)s, email = %(new_email)s, updated_at = NOW() WHERE id = %(id)s;"
         data = {
             'id': id,
             "new_fname" : request.form["new_fname"],
