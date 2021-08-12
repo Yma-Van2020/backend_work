@@ -43,4 +43,5 @@ def delete_user(user_id):
     User.delete_one(user_id)
     return redirect('/')
 
+
 if __name__ == "__main__":app.run(debug=True)

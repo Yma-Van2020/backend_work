@@ -1,0 +1,14 @@
+.table {
+    width: 600px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+body {
+    padding-top: 100px;
+    padding-left: 200px;
+}

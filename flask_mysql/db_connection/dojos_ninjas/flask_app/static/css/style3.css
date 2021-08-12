@@ -1,0 +1,24 @@
+
+.form-control{
+    width: 350px;
+    margin: 15px;
+    display: inline;
+    align-self: flex-start;
+}
+
+body{
+    padding-left: 50px;
+    padding-top: 50px;
+    display:flex;
+    flex-direction: column;
+}
+
+button{
+    position: relative;
+    left:120px;
+    margin-top: 20px;
+}
+label{
+    width: 90px;
+}
+

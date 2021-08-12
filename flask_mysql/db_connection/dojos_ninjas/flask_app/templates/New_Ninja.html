@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New ninja</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+   <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style3.css') }}">
+   </head>
+</head>
+
+  <body>
+      <h1>New Ninja</h1>
+      <form action="/create_ninja" method="POST">
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Dojo:</label>
+          <select class="form-control" id="exampleFormControlSelect1" name="dojo_id"> 
+           
+           {% for dojo in all_dojos:%}
+            <option value={{dojo.id}}>{{dojo.name}}</option>
+          {% endfor %}
+            
+          </select>
+        </div>
+        <div class="form-group">
+            <label for="fn">First Name:</label>
+            <input type="text" class="form-control" name ="fname" id="fn">
+          </div>
+          <div class="form-group">
+            <label for="ln">Last Name:</label>
+            <input type="text" class="form-control" name ="lname" id="ln">
+          </div>
+          <div class="form-group">
+            <label for="ag">Age:</label>
+            <input type="text" class="form-control" name ="age" id="ag">
+          </div>
+          <a href=""><button type="submit" class="btn btn-warning">Create</button></a>
+      </form>
+
+      <a href="/">Home</a>
+  </body>
+</html>

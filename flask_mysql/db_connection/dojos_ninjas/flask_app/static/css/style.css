@@ -1,0 +1,29 @@
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+form,
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  display: flex;
+  justify-content: space-around;
+}
+
+h1, .name, button, .dojos, a{
+    margin:25px;
+}
+
+.dojos{
+    border: 2px black solid;
+    width: 500px;
+    height:350px;
+    overflow: scroll;
+}
+
+
