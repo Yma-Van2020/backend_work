@@ -6,10 +6,15 @@ from flask_app.models.user import User
 def index():
     users = User.get_all()
     return render_template("Read(All).html", all_users = users)
+
 @app.route('/create_user', methods=["POST"])
 def create_user():
-    
-    User.save(request.form)
+    data = {
+        "fname" : request.form["fname"],
+        "lname" : request.form["lname"],
+        "email" : request.form["email"]
+        }
+    User.save(data)
     return redirect('/')
 @app.route("/form")
 def add_new():
