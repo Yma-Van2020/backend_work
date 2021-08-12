@@ -1,5 +1,5 @@
 from flask_app.config.mysqlconnection import connectToMySQL
-from flask import Flask, render_template, request, redirect
+# from flask import  render_template, request, redirect
 
 class Ninja:
     def __init__( self , data ):
