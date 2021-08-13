@@ -1,6 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app.models import email
-from flask import flash
+from flask import flash,request
 import re
 
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$') 
@@ -32,3 +32,12 @@ class Email:
             is_valid = False
         return is_valid
     
+    @classmethod 
+    def get_one(cls, address):
+        query = "SELECT * FROM emails WHERE emails.address = %(address)s;"
+        data = {
+            "address":request.form['address']
+        }
+        results = connectToMySQL("email").query_db(query,data)
+        
+        return results

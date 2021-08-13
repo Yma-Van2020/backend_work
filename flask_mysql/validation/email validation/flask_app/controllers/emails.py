@@ -21,6 +21,9 @@ def create_email():
     
     if not Email.validate_email(request.form):
         return redirect("/")
+    elif (Email.get_one(request.form["address"])) != ():
+        return redirect("/")
     else:
         Email.create(data)
         return redirect("/success")
+
