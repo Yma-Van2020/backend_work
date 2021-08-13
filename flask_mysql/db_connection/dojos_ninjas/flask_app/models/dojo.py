@@ -40,3 +40,4 @@ class Dojo:
         return connectToMySQL('dojos_ninjas').query_db( query, data )
     
   
+  
