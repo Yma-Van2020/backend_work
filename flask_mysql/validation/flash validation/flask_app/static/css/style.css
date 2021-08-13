@@ -1,0 +1,28 @@
+* {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  form {
+    padding: 125px;
+    width: 45%;
+    background-color: rgb(69, 68, 68);
+    color: aliceblue;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+  h1{
+      color: rgb(228, 202, 51);
+  }
+
+  button{
+    margin: 25px;
+    position: relative;
+    left: 85px;
+  }
+
+  .msg{
+    color:red;
+    margin:25px;
+  }
