@@ -13,6 +13,7 @@ def create_user():
         "fname" : request.form["fname"],
         "lname" : request.form["lname"],
         "email" : request.form["email"]
+        "password" : request.form["password"]
         }
     User.save(data)
     return redirect('/')
